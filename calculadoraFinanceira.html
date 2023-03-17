@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+</head>
+<body>
+
+    <div class="pai" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <h2>Simulador financeiro</h2> 
+
+   <p> De acordo com <b>O Globo</b>, cerca de 1/3 de toda a produção de peixes é <br> desperdiçada durante o transporte e manuseio.</p>
+
+   <span> Calcule a taxa de desperdicio de acordo com o peso(kg) transportado por mês</span> <br>
+    
+  <br> Peso: <input id="input_peso">
+  <button onclick="calcular()"> calcular </button> 
+
+<div id="div_taxas"></div>
+
+</body>
+</html>
+
+<script>
+function calcular() {
+
+    var peso = Number(input_peso.value)
+    var desperdicio = (peso * 33) / 100
+    var prejuizo = (desperdicio * 42)
+    var valor50 = prejuizo / 2
+    var valor25 = valor50 / 2
+
+div_taxas.innerHTML = `<br>Você terá um desperdicio de <b>${desperdicio}</b> kg e um prejuizo de aproximadamente <br><b>R$${prejuizo}</b> com base no preço médio <b>(R$42/kg)</b> com auxilio da nossa <br>solução, é possivel evitar cerca de <b>25% a 50%</b> <span style="color:green">(R$${valor25} - R$${valor50})</span> desse valor. `
+
+}
+
+</script>
